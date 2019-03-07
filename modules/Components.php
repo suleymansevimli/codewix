@@ -37,7 +37,7 @@ class Components{
         </div>";
     }
 
-    // Badges
+    /* Badges */
     // Head Badges
     public function BadgeHead($head="h6", $badgesType="secondary", $text="NEW"){
         return " <$head> Hello EveryOne <span class=\"badge badge-$badgesType\">$text</span> </$head> ";
@@ -46,8 +46,22 @@ class Components{
     // Button Badges
     public function BadgeButton($text="Notifications", $badgeStyle="light", $badgeText="4"){
        return $btn = $this->Button("$text <span class=\"badge badge-$badgeStyle\">$badgeText</span>","primary");
-         
     } 
+
+    // Contextual Badges
+    public function BadgeContext($badgeText="Example Text", $badgeStyle="primary"){
+        return "<span class=\"badge badge-$badgeStyle\"> $badgeText </span> ";
+    }
+
+    // Pill Badges
+    public function PillBadges($badgeText="Text", $badgeStyle="primary"){
+        return "<span class=\"badge badge-pill badge-$badgeStyle\"> $badgeText </span>";
+    }
+    
+    // Link Badges
+    public function LinkBadge($badgeText="Text", $badgeLink="#", $badgeStyle="primary"){
+        return "<a href=\"$badgeLink\" class=\"badge badge-$badgeStyle\"> $badgeText </a>";
+    }
 
     function _destruct(){
         //

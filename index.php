@@ -1,3 +1,10 @@
+<?php 
+  // add class
+  include_once './modules/Breadcrumb.php';
+  include_once './modules/NavBar.php';
+  include_once './modules/Components.php';
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,9 +15,9 @@
   </head>
   <body>
   <?php 
-    require('./modules/NavBar.php');
+
     $navbar = new NavBar();
-    
+        
     /* 1. JUST AN IMAGE */
 
     echo "<hr> <h3> Navbar Light </h3> <hr>";
@@ -34,8 +41,19 @@
 
     echo "<hr> <h3> Navbar Content </h3> <hr>";
     // navbar with form
-    echo($navbar->navBar())
-?>
+    echo($navbar->navBar());
+   
+    $bc = new Breadcrumb();
+   echo $bc->Breadcrumb(
+
+      [
+        'active' => 'Google',
+        'https://facebook' => 'Facebook',
+        '' => 'Ana Sayfa'
+      ]
+
+    );
+  ?>
 
  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
 <?php 
     require('Components.php');
-    class NavBar extends Components {
+    class NavBar{
 
        function _construct(){
             // on start
@@ -33,7 +33,6 @@
 
         private function menuContent(){
             $Ddown = $this->dropDown();
-            $btn = parent::BadgeButton();
             return"
             <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                 <ul class=\"navbar-nav mr-auto\">
@@ -49,17 +48,19 @@
                     <li class=\"nav-item\">
                         <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>
                     </li>
-                    $btn
+                   
                 </ul>
             </div> ";
         }
 
         public function toggleNavigation(){
+           
             return 
             "
             <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
+            
             ";
         }
 
@@ -95,9 +96,6 @@
             </nav>
             ";
         }
-
-
-        
 
         function _destruct(){
             // finish
