@@ -1,4 +1,4 @@
-<?php 
+<?php
   // add class
   include_once './modules/Breadcrumb.php';
   include_once './modules/NavBar.php';
@@ -14,10 +14,10 @@
     <title>Navbar Examples</title>
   </head>
   <body>
-  <?php 
+  <?php
 
     $navbar = new NavBar();
-        
+
     /* 1. JUST AN IMAGE */
 
     echo "<hr> <h3> Navbar Light </h3> <hr>";
@@ -42,9 +42,9 @@
     echo "<hr> <h3> Navbar Content </h3> <hr>";
     // navbar with form
     echo($navbar->navBar());
-   
+
     $bc = new Breadcrumb();
-   echo $bc->Breadcrumb(
+    echo $bc->Breadcrumb(
 
       [
         'active' => 'Google',
@@ -53,9 +53,13 @@
       ]
 
     );
+
+
+    $alert = new Components();
+    echo $alert->dismissAlert("text","primary","dismissible");
   ?>
 
- 
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

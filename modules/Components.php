@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Components{
     function _construct(){
@@ -6,12 +6,12 @@ class Components{
     }
 
     // Button
-    public function Button($text="Button",$class="primary",$status=""){
-    return " <button type=\"button\" class=\"btn btn-$class\" $status>$text</button> ";
+    public function Button($text="Button",$class="primary",$type="button",$status=""){
+    return " <button type=\"$type\" class=\"btn btn-$class\" $status>$text</button> ";
     }
 
 
-    // Alerts 
+    // Alerts
     public function Alert($text="A simple primary alert—check it out!",$class="primary"){
         return "
         <div class=\"alert alert-$class\" role=\"alert\">
@@ -25,9 +25,9 @@ class Components{
         $class="warning",
         $alertType="dismissible",
         $animation="fade show"){
-            // add button 
-            $btn = $this->Button("<span aria-hidden=\"true\">&times;</span>","close");
-        return 
+        // add button
+        $btn = $this->Button("<span aria-hidden=\"true\">&times;</span>","close");
+        return
         "
         <div class=\"alert alert-$class alert-$alertType $animation\" role=\"alert\">
             $text
@@ -46,7 +46,7 @@ class Components{
     // Button Badges
     public function BadgeButton($text="Notifications", $badgeStyle="light", $badgeText="4"){
        return $btn = $this->Button("$text <span class=\"badge badge-$badgeStyle\">$badgeText</span>","primary");
-    } 
+    }
 
     // Contextual Badges
     public function BadgeContext($badgeText="Example Text", $badgeStyle="primary"){
@@ -57,11 +57,12 @@ class Components{
     public function PillBadges($badgeText="Text", $badgeStyle="primary"){
         return "<span class=\"badge badge-pill badge-$badgeStyle\"> $badgeText </span>";
     }
-    
+
     // Link Badges
     public function LinkBadge($badgeText="Text", $badgeLink="#", $badgeStyle="primary"){
         return "<a href=\"$badgeLink\" class=\"badge badge-$badgeStyle\"> $badgeText </a>";
     }
+
 
     function _destruct(){
         //
