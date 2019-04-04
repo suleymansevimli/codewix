@@ -9,7 +9,21 @@ class Components{
     public function Button($text="Button",$class="primary",$type="button",$status=""){
     return " <button type=\"$type\" class=\"btn btn-$class\" $status>$text</button> ";
     }
+    // Button Group
+    public function ButtonGroup($names=[
+        'btn1'=>[
+          'type'=>'button',
+          'class'=>'btn btn-secondary',
+          'name'=>'Button1'
+        ],
+      ])
+    {
+        foreach ($names as $name) {
+          print_r($name);
+          return "<button type=\"button\" class=\"btn btn-secondary\">Left</button>";
+        }
 
+    }
 
     // Alerts
     public function Alert($text="A simple primary alert—check it out!",$class="primary"){
@@ -28,13 +42,10 @@ class Components{
         // add button
         $btn = $this->Button("<span aria-hidden=\"true\">&times;</span>","close");
         return
-        "
-        <div class=\"alert alert-$class alert-$alertType $animation\" role=\"alert\">
+        "<div class=\"alert alert-$class alert-$alertType $animation\" role=\"alert\">
             $text
-            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                $btn
-            </button>
-        </div>";
+            $btn
+         </div>";
     }
 
     /* Badges */

@@ -54,9 +54,9 @@
 
     );
 
+    $btnGrup = new Components();
+    $btnGrup->ButtonGroup();
 
-    $alert = new Components();
-    echo $alert->dismissAlert("text","primary","dismissible");
   ?>
 
 
