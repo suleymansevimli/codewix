@@ -1,19 +1,19 @@
 <?php
 
 class Breadcrumb {
-    
+
     function _construct(){
-        // ...
+        require 'Components.php';
     }
 
     protected function menuItems($pages=[]){
        foreach($pages as $key => $val){
             if($key === "active"){
-                echo " 
+                echo "
                     <ol class=\"breadcrumb\">
                     <li class=\"breadcrumb-item active\" aria-current=\"page\">$val</li>";
             }else{
-            echo "  
+            echo "
                 <li class=\"breadcrumb-item\"><a href=\"$key\">$val</a></li>";
             }
         }
@@ -22,7 +22,7 @@ class Breadcrumb {
     public function Breadcrumb($pages=[]){
         $items = $this->menuItems($pages);
         echo $items;
-        return 
+        return
         "
             <nav aria-label=\"breadcrumb\">
                 <ol class=\"breadcrumb\">
@@ -30,8 +30,8 @@ class Breadcrumb {
                 </ol>
             </nav>
         ";
-        
-        
+
+
     }
 
     function _destruct(){

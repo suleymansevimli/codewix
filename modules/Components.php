@@ -9,6 +9,7 @@ class Components{
     public function Button($text="Button",$class="primary",$type="button",$status=""){
     return " <button type=\"$type\" class=\"btn btn-$class\" $status>$text</button> ";
     }
+    
     // Button Group
     public function ButtonGroup($names=[
         'btn1'=>[
@@ -16,11 +17,28 @@ class Components{
           'class'=>'btn btn-secondary',
           'name'=>'Button1'
         ],
+        'btn2' => [
+            'type' => 'button',
+            'class' => 'btn btn-primary',
+            'name' => 'Button2'
+        ],
+        'btn3' => [
+            'type' => 'button',
+            'class' => 'btn btn-primary',
+            'name' => 'Button3'
+        ]
       ])
     {
         foreach ($names as $name) {
-          print_r($name);
-          return "<button type=\"button\" class=\"btn btn-secondary\">Left</button>";
+          if (is_array($name)) {
+            $type = $name['type'];
+            $class = $name['class'];
+            $name = $name['name'];
+
+            echo "<button type=\"$type\" class=\"$class\" >$name</button>";
+          }else{
+            echo "not ok";
+          }
         }
 
     }
