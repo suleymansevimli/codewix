@@ -3,6 +3,7 @@
   include_once './modules/Breadcrumb.php';
   include_once './modules/NavBar.php';
   include_once './modules/Components.php';
+  include_once './modules/Card.php';
 
 ?>
 <!doctype html>
@@ -56,6 +57,10 @@
 
     $btnGrup = new Components();
     $btnGrup->ButtonGroup();
+
+
+    $card = new Card();
+   echo $card->setCard();
 
   ?>
 
