@@ -10,7 +10,7 @@ class Card {
         $this->end_tag = $end;
     }
 
-    public function setCard(){
+    public static function setCard(){
         return 
         $this->start_tag.
         "<div class='body'>".

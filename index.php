@@ -1,9 +1,9 @@
 <?php
   // add class
-  include_once './modules/Breadcrumb.php';
-  include_once './modules/NavBar.php';
-  include_once './modules/Components.php';
-  include_once './modules/Card.php';
+  include_once './components/Breadcrumb.php';
+  include_once './components/NavBar.php';
+  include_once './components/Components.php';
+  include_once './components/Card.php';
 
 ?>
 <!doctype html>
@@ -60,7 +60,7 @@
 
 
     $card = new Card();
-   echo $card->setCard();
+    echo $card::setCard();
 
   ?>
 
