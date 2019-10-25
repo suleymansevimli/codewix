@@ -4,6 +4,7 @@
   include_once './components/NavBar.php';
   include_once './components/Components.php';
   include_once './components/Card.php';
+  include_once './components/Button.php';
 
 ?>
 <!doctype html>
