@@ -2,7 +2,7 @@
 <div class="container">
 <?php
 
-include_once './components/Button.php';
+require_once "./components/Button.php";
 
 $btn = new Button;
 $btn->id = 'btn_id btn_id_second';
