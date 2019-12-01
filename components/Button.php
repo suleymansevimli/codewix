@@ -1,5 +1,4 @@
-<?
-
+<?php
 class Button {
     
     private $btn;
@@ -15,11 +14,13 @@ class Button {
     public $inlineCss;
     public $otherAttr; // other, attributes ex : data-target, data-placement etc. this attr must will be array ! 
 
+    
     public function __construct(){
         $this->startTag = '<button ';
         $this->seperator='>';
-       
+        $this->endTag='</button>';
     }
+
 
     public function setButton(){
         
@@ -32,6 +33,7 @@ class Button {
         $btn .= " role=$this->role";
         $btn .= " value=$this->value";
         $btn .= " style='".$this->inlineCss."'";
+        
 
         if(count($this->otherAttr)>1):
             print [
@@ -49,6 +51,8 @@ class Button {
         return $btn;
     }
 
-
+    public function __destruct(){
+        exit;
+    }
 
 }

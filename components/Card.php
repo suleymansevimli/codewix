@@ -1,23 +1,34 @@
 <?php 
+require_once 'Component.php';
 
-class Card {
+class Card extends Component{
 
-    private $start_tag;
-    private $end_tag;
+    private $card;
 
-    public function __construct($start='<div class="card>', $end='</div'){
-        $this->start_tag = $start;
-        $this->end_tag = $end;
+    public function __construct($state=[]){
+        $this->start_tag = '<div ';
+        $this->end_tag = '</div>'; 
+        $this->state($state);
     }
 
-    public static function setCard(){
-        return 
-        $this->start_tag.
-        "<div class='body'>".
-        "hello world"
-        ."</div>".
-        $this->end_tag;
+    private function state($state = []){ 
+        return $state;
     }
+
+    public function setCard(){
+        $card  = $this->card;
+        $card .= $this->start_tag;
+        $card .= "class=' card ".$this->className."'";
+        $card .= " id='".$this->id."'";
+        $card .= " style='".$this->inlineCss."'";
+        $card .= $this->seperator;
+        $card .= $this->text;
+        $card .= $this->children;
+        $card .= $this->end_tag;
+       
+        return $card;
+    }
+
 }
 
 
